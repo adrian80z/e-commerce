@@ -46,3 +46,5 @@ $RECYCLE.BIN/
 
 .ecommerce
 .vscode
+db.sqlite3
+__pycache__
