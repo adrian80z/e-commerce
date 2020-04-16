@@ -14,10 +14,5 @@ class Product(models.Model):
     ram = models.CharField(max_length=50, blank=True, null=True)
     battery_life = models.CharField(max_length=50, blank=True, null=True)
 
-    class Meta:
-        ordering = ('name',)
-        verbose_name = 'product'
-        verbose_name_plural = 'products'
-
     def __str__(self):
         return self.name
