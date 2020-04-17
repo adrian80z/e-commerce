@@ -14,6 +14,21 @@
         <p>Processor: {{ product.processor}}</p>
 
         {{ product.ram }}
+        <div>
+            <form method="post" action="{% url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input name="quantity" type="number" min="1" max="999" class="form-control"
+                        placeholder="Quantity" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit">Add</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        {{ product.description }}
     </div>
 </div>
 <a href="{% url 'index' %}">Back to HomePage</a>
