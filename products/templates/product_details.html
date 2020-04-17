@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-12 col-lg-5 col-md-5">
+        <img class="card-img-top" src="/media/{{ product.image }}" alt=" {{ product.name}} image" />
+    </div>
+    <div class="col-sm-12 col-lg-6 col-md-6">
+        <p>Product Features</p>
+        <hr />
+        <p>Processor: {{ product.processor}}</p>
+
+        {{ product.ram }}
+    </div>
+</div>
+<a href="{% url 'index' %}">Back to HomePage</a>
+{% endblock %}
