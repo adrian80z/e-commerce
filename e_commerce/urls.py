@@ -18,6 +18,7 @@ from django.contrib import admin
 from accounts import views as accounts_view
 from products import views as products_view
 from cart import urls as urls_cart
+from search import urls as urls_search
 from django.views.static import serve
 from .settings import MEDIA_ROOT
 
@@ -29,5 +30,6 @@ urlpatterns = [
     url(r'^accounts/register/$', accounts_view.registration, name="registration"),
     url(r'^products/', include('products.urls')),
     url(r'^cart/', include(urls_cart)),
+    url(r'^search/', include(urls_search)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 ]
