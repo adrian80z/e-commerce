@@ -48,3 +48,4 @@ $RECYCLE.BIN/
 .vscode
 db.sqlite3
 __pycache__
+env.py
