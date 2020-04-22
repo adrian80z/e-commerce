@@ -9,11 +9,15 @@
         <img class="card-img-top" src="/media/{{ product.image }}" alt=" {{ product.name}} image" />
     </div>
     <div class="col-sm-12 col-lg-6 col-md-6">
-        <p>Product Features</p>
+        <h3>Product Features</h3>
         <hr />
-        <p>Processor: {{ product.processor}}</p>
+        <ul>
+            <li>{{ product.processor}}</li>
+            <li>{{ product.ram }}</li>
+            <li>{{ product.graphics }}</li>
+            <li>Battery life: {{ product.battery_life }}</li>
 
-        {{ product.ram }}
+        </ul>
         <div>
             <form method="post" action="{% url 'add_to_cart' product.id %}">
                 {% csrf_token %}
@@ -28,8 +32,9 @@
         </div>
     </div>
     <div class="col-sm-12">
+        <h3>Product information</h3>
         {{ product.description }}
     </div>
 </div>
-<a href="{% url 'index' %}">Back to HomePage</a>
+<a href="{% url 'index' %}">Continue Shopping</a>
 {% endblock %}
