@@ -14,11 +14,13 @@
                 </a>
                 <div class="card-body text-center">
                     <h5 class="product-name">{{ product.name }}</h5>
-                    <span><i class="fas fa-pound-sign"></i></span>
+                    <span><i class="fas fa-euro-sign"></i></span>
                     <span>{{ product.price }}</span>
                 </div>
             </div>
         </div>
+        {% empty %}
+        <div class="no-results">Oops, we didn't find any results.Please try another phrase...</div>
         {% endfor %}
     </div>
 </div>
