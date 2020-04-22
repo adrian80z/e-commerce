@@ -1,0 +1,46 @@
+body {
+  font-family: Arial;
+  padding-top: 150px;
+}
+
+footer {
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  border-top: 1px solid #ededed;
+  color: black;
+}
+
+.icon-bar {
+  background-color: #fff;
+}
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  border-radius: 50%;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+
+.product {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+caption p {
+  word-wrap: break-word;
+}
+
+.row.row-flex {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
