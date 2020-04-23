@@ -10,7 +10,8 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     {% block head_js %}
     {% endblock head_js %}
 </head>
@@ -29,15 +30,6 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Laptops</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tablets</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Smartphones</a>
-                    </li> -->
                 </ul>
                 <form class="form-inline justify-content-center d-none d-sm-block" action="{% url 'search' %}"
                     method="get">
@@ -76,11 +68,13 @@
 
     <h1>{% block page_heading %} {% endblock %}</h1>
     {% if messages %}
-    <div class="alert alert-success">
-        <div class="messages">
-            {% for message in messages %}
-            {{ message }}
-            {% endfor %}
+    <div class="container">
+        <div class="alert alert-success">
+            <div class="messages">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+            </div>
         </div>
     </div>
     {% endif %}
@@ -92,11 +86,6 @@
             <p>&copy; 2020 Code Institute</p>
         </div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script> -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>
