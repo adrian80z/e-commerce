@@ -5,10 +5,13 @@
 {% block content %}
 
 <div class="row">
+    <div class="col-sm-12">
+        <h1 class="details-heading">{{ product.name }}</h1>
+    </div>
     <div class="col-sm-12 col-lg-5 col-md-5">
         <img class="card-img-top" src="/media/{{ product.image }}" alt=" {{ product.name}} image" />
     </div>
-    <div class="col-sm-12 col-lg-6 col-md-6">
+    <div class="col-sm-12 col-lg-6 col-md-6 box-margin">
         <h3>Product Features</h3>
         <hr />
         <ul>
@@ -19,13 +22,17 @@
 
         </ul>
         <div>
+            <hr />
+            <span class="product-price"> {{ product.price}} </span>
+            <hr />
+        </div>
+        <div>
             <form method="post" action="{% url 'add_to_cart' product.id %}">
                 {% csrf_token %}
                 <div class="input-group">
-                    <input name="quantity" type="number" min="1" max="999" class="form-control"
-                        placeholder="Quantity" />
+                    <input name="quantity" type="number" min="1" max="999" class="form-control" value=1 required />
                     <span class="input-group-btn">
-                        <button class="btn btn-success" type="submit">Add</button>
+                        <button class="btn btn-success" type="submit">Add to cart</button>
                     </span>
                 </div>
             </form>
@@ -33,6 +40,7 @@
     </div>
     <div class="col-sm-12">
         <h3>Product information</h3>
+        <hr />
         {{ product.description }}
     </div>
 </div>
