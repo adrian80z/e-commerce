@@ -10,10 +10,8 @@ def view_cart(request):
 
 
 def add_to_cart(request, id):
-    """Add quantity of the specified product to the cart / prevents literal fo int() error"""
-    quantity = int(request.POST.get('quantity') or 0)
-    if quantity == 0:
-        messages.warning(request, 'Please enter a quantity.')
+    """Add quantity of the specified product to the cart / prevents literal for int() error"""
+    quantity = int(request.POST.get('quantity'))
 
     cart = request.session.get('cart', {})
     if id in cart:
@@ -22,7 +20,9 @@ def add_to_cart(request, id):
         cart[id] = cart.get(id, quantity)
 
     request.session['cart'] = cart
-    return redirect(reverse('index'))
+    messages.success(
+        request, 'Item added to your cart. View cart {% url "view_cart " %}')
+    return redirect(reverse('detail', args=(id,)))
 
 
 def update_cart(request, id):
@@ -32,7 +32,9 @@ def update_cart(request, id):
 
     if quantity > 0:
         cart[id] = quantity
+        messages.success(request, 'Cart successfully updated.')
     else:
         cart.pop(id)
     request.session['cart'] = cart
+    messages.success(request, 'Item deleted.')
     return redirect(reverse('view_cart'))
