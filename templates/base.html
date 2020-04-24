@@ -28,7 +28,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-home"></i> Home <span
+                                class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <form class="form-inline justify-content-center d-none d-sm-block" action="{% url 'search' %}"
@@ -39,18 +40,19 @@
                 <ul class="navbar-nav ml-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'registration' %}">Register</a>
+                        <a class="nav-link" href="{% url 'registration' %}"><i class="fas fa-user-plus"></i>
+                            Register</a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'view_cart' %}"><i class="fa fa-shipping-cart"></i>Cart
+                        <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> Cart
                             {% if product_count > 0 %}
                             <label class="badge badge-warning">{{ product_count }}</label>
                             {% endif %}
