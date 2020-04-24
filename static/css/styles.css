@@ -6,10 +6,12 @@ body {
 
 h1 {
   font-size: 1.75rem;
+  font-weight: bold;
 }
 
 h3 {
   font-size: 1.3rem;
+  font-weight: bold;
 }
 
 a:hover {
@@ -89,11 +91,34 @@ footer {
 /* Product details page */
 .details-heading {
   font-size: 1.5rem;
-  /* margin: 2rem 0 1rem 0; */
 }
 
 .box-margin {
-  margin: 1.8rem 0;
+  margin: 2rem 0;
+}
+
+.smaller-font {
+  font-size: 0.9rem;
+}
+
+.product-details-price {
+  color: #dc143c;
+  font-weight: bold;
+  font-size: 1.8rem;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.5rem 0;
+  display: block;
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.mr {
+  margin: auto auto;
+}
+
+.info {
+  margin-top: 2.5rem;
 }
 
 .icon-bar {
