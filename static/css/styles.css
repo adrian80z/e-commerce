@@ -1,14 +1,99 @@
 body {
   font-family: Arial;
-  padding-top: 150px;
+  padding-top: 50px;
+  color: #595c59;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.alert-success {
+  margin: 3rem 0 -2rem 0;
 }
 
 footer {
-  margin-top: 40px;
-  padding-top: 40px;
-  padding-bottom: 20px;
-  border-top: 1px solid #ededed;
-  color: black;
+  background-color: #343a40;
+  padding: 2rem 1rem;
+  margin-top: 5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* homepage */
+.jumbotron-home {
+  background: url(../images/asus.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 50vh;
+}
+
+.container-fluid {
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.container-fluid h2 {
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+
+.container-fluid p {
+  font-size: 1.29rem;
+}
+
+.heading {
+  margin-top: 4rem;
+}
+
+.card {
+  padding: 0.5rem;
+  border: 1px solid transparent;
+}
+
+.card:hover {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-body {
+  padding: 0;
+}
+
+.product-name {
+  color: #595c59;
+}
+
+.product-name {
+  min-height: 100px;
+}
+
+.product-price {
+  color: #dc143c;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-top: 1px solid lightgray;
+  padding: 0.5rem 0 0 0;
+  display: block;
+}
+
+/* Product details page */
+.details-heading {
+  font-size: 1.5rem;
+  /* margin: 2rem 0 1rem 0; */
+}
+
+.box-margin {
+  margin: 1.8rem 0;
 }
 
 .icon-bar {
@@ -30,9 +115,8 @@ footer {
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
+  width: 100px;
+  height: 100px;
 }
 
 caption p {
