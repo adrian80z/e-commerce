@@ -18,31 +18,41 @@
             <li>{{ product.processor}}</li>
             <li>{{ product.ram }}</li>
             <li>{{ product.graphics }}</li>
+            <li>{{ product.screen }}</li>
             <li>Battery life: {{ product.battery_life }}</li>
-
         </ul>
-        <div>
-            <hr />
-            <span class="product-price"> {{ product.price}} </span>
-            <hr />
-        </div>
-        <div>
-            <form method="post" action="{% url 'add_to_cart' product.id %}">
-                {% csrf_token %}
-                <div class="input-group">
-                    <input name="quantity" type="number" min="1" max="999" class="form-control" value=1 required />
-                    <span class="input-group-btn">
-                        <button class="btn btn-success" type="submit">Add to cart</button>
-                    </span>
-                </div>
-            </form>
+        <p>
+            <span class="product-details-price"><i class="fas fa-euro-sign"></i> {{ product.price}} </span>
+        </p>
+        <div class="row">
+            <div class="col-xs-8 mr">
+                <form method="post" action="{% url 'add_to_cart' product.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="quantity" type="number" min="1" max="999" class="form-control" value=1 required />
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit"> <i class="fas fa-cart-plus"></i> Add to
+                                cart</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            {% if product_count > 0 %}
+            <button class="btn btn-success"><a href="{% url 'view_cart' %}">View Cart</a></button>
+            {% endif %}
         </div>
     </div>
+</div>
+<div class="row info">
     <div class="col-sm-12">
         <h3>Product information</h3>
         <hr />
-        {{ product.description }}
+        <p><strong>{{ product.description_heading_one }}</strong></p>
+        <p class="smaller-font">{{ product.description_one }}</p>
+        <p><strong>{{ product.description_heading_two }}</strong></p>
+        <p class="smaller-font">{{ product.description_two }}</p>
+        <p><strong>{{ product.description_heading_three }}</strong></p>
+        <p class="smaller-font">{{ product.description_three }}</p>
     </div>
 </div>
-<a href="{% url 'index' %}">Continue Shopping</a>
 {% endblock %}
