@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+
+    </div>
+</div>
+<div class="row">
+    {% for product in products %}
+    <div class="col-sm-12 col-lg-3 col-md-3">
+        <h1 class="heading">Keep in touch with the latest tech</h1>
+        <a href="{% url 'detail' product.id %}">
+            <div class="card text-center">
+                <img class="card-img-top" src="/media/{{ product.image }}" alt=" {{ product.name}} image" />
+                <div class="card-body text-center">
+                    <p class="product-name">{{ product.name }}</p>
+                    <span class="product-price"><i class="fas fa-euro-sign"></i> {{ product.price }}</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% empty %}
+    <div class="no-results">Oops, we didn't find any results. Please try another phrase...</div>
+    {% endfor %}
+</div>
+{% endblock %}
