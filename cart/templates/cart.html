@@ -4,48 +4,51 @@
 
 
 {% block page_heading %}
-<h1 class=" heading text-center">Review your shopping cart</h1>
+<h1 class=" heading text-center cart-bottom">Review your shopping cart</h1>
 <hr />
 {% endblock %}
 {% block content %}
 <div class="row">
     {% if product_count == 0  %}
+    <div class="col-sm-12 text-center">
+        <i class="fas fa-shopping-cart empty-cart"></i>
+    </div>
     <div class="col-sm-12 text-center m-3">
         <p>Your cart is currently empty</p>
     </div>
     <div class="col-sm-6 offset-sm-3 text-center">
         <a href="{% url 'index' %}">
-            <button type="button" class="btn btn-sm btn-success w-50">Return to Shopping</button>
+            <button type="button" class="btn btn-sm btn-success cart">Return to Shopping</button>
         </a>
     </div>
     {% else %}
     {% for item in cart_items %}
-    <div class="col-sm-12 col-md-3">
+    <div class="col-sm-12 col-md-6 col-lg-3">
         <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image}}')"></div>
     </div>
-    <div class="col-sm-12 col-md-3">
-        <div class="caption">
+    <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="align">
             <p class="product-description">{{ item.product.name }}</p>
         </div>
     </div>
-    <div class="col-sm-12 col-md-3">
-        {{ item.quantity }} x &euro; {{ item.product.price }}
-    </div>
-    <div class="col-sm-12 col-md-3">
-        <form class="form-inline" method="post" action="{% url 'update_cart' item.id %}">
+    <div class="col-sm-12 col-md-6 col-lg-3">
+        <form class="form-inline align justify-content-center" method="post" action="{% url 'update_cart' item.id %}">
             {% csrf_token %}
             <div class="input-group-addon">Qty&nbsp;</div>
             <input name="quantity" type="number" min="0" max="999" value="{{item.quantity }}" class="form-control">
             <button type="submit" class="btn btn-success"><i class="fas fa-sync-alt"></i></button>
         </form>
-        <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-3 align">
+        {{ item.quantity }} x &euro; {{ item.product.price }} <a href="{% url 'remove_product' item.id %}"
+            class="btn btn-danger" role="button"><i class="fas fa-trash"></i></a>
     </div>
     {% endfor %}
 </div>
 <hr />
 <div class="row">
-    <div class="col-sm-12 text-md-right">
-        <p>Order Summary</p>
+    <div class="col-sm-12 text-md-right text-sm-right">
+        <p>Total</p>
         <p>&euro; {{ total }}</p>
     </div>
 </div>
@@ -53,7 +56,7 @@
     <div class="col-sm-12">
         <a href="{% url 'index' %}" class="btn btn-success" role="button"><i class="fas fa-arrow-circle-left"></i>
             Shopping</a>
-        <a href="{% url 'checkout' %}" class="btn btn-success" role="button"> Checkout <i
+        <a href="{% url 'checkout' %}" class="btn btn-success right" role="button"> Checkout <i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
 </div>
