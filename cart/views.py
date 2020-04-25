@@ -21,7 +21,7 @@ def add_to_cart(request, id):
 
     request.session['cart'] = cart
     messages.success(
-        request, 'Item added to your cart. View cart {% url "view_cart " %}')
+        request, 'Item added to your cart.')
     return redirect(reverse('detail', args=(id,)))
 
 
@@ -32,9 +32,17 @@ def update_cart(request, id):
 
     if quantity > 0:
         cart[id] = quantity
-        messages.success(request, 'Cart successfully updated.')
     else:
         cart.pop(id)
     request.session['cart'] = cart
-    messages.success(request, 'Item deleted.')
+    messages.success(request, 'Cart updated.')
+    return redirect(reverse('view_cart'))
+
+
+def remove_product(request, id):
+    """Remove items from cart"""
+    cart = request.session.get('cart', {})
+    cart.pop(id)
+    request.session['cart'] = cart
+    messages.success(request, 'Item removed from your Cart')
     return redirect(reverse('view_cart'))
