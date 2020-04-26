@@ -12,15 +12,14 @@
     </div>
 </section>
 {% endblock %}
-
 {% block page_heading %}
-Keep in touch with the latest tech
+<h1 class="heading">Keep in touch with the latest tech</h1>
 {% endblock %}
 
 {% block content %}
 <div class="row">
     {% for product in products %}
-    <div class="col-sm-12 col-lg-3 col-md-3">
+    <div class="col-sm-12 col-lg-3 col-md-4">
         <a href="{% url 'detail' product.id %}">
             <div class="card text-center">
                 <img class="card-img-top" src="/media/{{ product.image }}" alt=" {{ product.name}} image" />
