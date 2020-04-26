@@ -2,7 +2,12 @@ body {
   font-family: Arial;
   padding-top: 50px;
   color: #595c59;
+  height: 100%;
 }
+
+/* .main {
+  min-height: calc(100vh - 154px);
+} */
 
 h1 {
   font-size: 1.75rem;
@@ -25,8 +30,9 @@ a:hover {
 footer {
   background-color: #343a40;
   padding: 2rem 1rem;
-  margin-top: 5rem;
   color: rgba(255, 255, 255, 0.5);
+  margin-top: 5rem;
+  width: 100%;
 }
 
 /* homepage */
@@ -43,6 +49,8 @@ footer {
 .container-fluid {
   color: #fff;
   text-shadow: 1px 1px 2px #000;
+  position: absolute;
+  bottom: 4rem;
 }
 
 .container-fluid h2 {
@@ -121,9 +129,45 @@ footer {
   margin-top: 2.5rem;
 }
 
-.icon-bar {
-  background-color: #fff;
+/* cart page */
+.cart {
+  padding: 0.5rem 0;
+  width: 50%;
 }
+
+.empty-cart {
+  padding-top: 5rem;
+  font-size: 6rem;
+}
+
+.btn-danger {
+  margin-left: 2rem;
+}
+
+.btn-success {
+  margin-left: 4px;
+}
+
+.cart-bottom {
+  margin-bottom: 3rem;
+}
+
+.right {
+  float: right;
+}
+
+.align {
+  padding-top: 15px;
+  text-align: center;
+}
+
+.product-description {
+  font-size: 0.9rem;
+}
+
+/* .icon-bar {
+  background-color: #fff;
+} */
 
 .badge {
   padding-left: 9px;
@@ -142,6 +186,7 @@ footer {
   background-repeat: no-repeat;
   width: 100px;
   height: 100px;
+  margin: auto auto;
 }
 
 caption p {
