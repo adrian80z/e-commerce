@@ -1,16 +1,23 @@
 {% extends 'base.html' %}
-
 {% load bootstrap_tags %}
 
-{% block page_title %} Login Page {% endblock %}
+{% block page_title %} TopTech | Login Page {% endblock %}
 
 {% block content %}
-<form method="POST" class="">
-    <fieldset class="form-group">
-        <legend>Login</legend>
-        {% csrf_token %}
-        {{ login_form | as_bootstrap }}
-        <button type="submit" class="btn btn-primary">Login</button>
-    </fieldset>
-</form>
+<!--login form-->
+<div class="row">
+    <div class="col-sm-12 col-md-6 offset-md-3">
+        <form method="POST" class="login">
+            <fieldset class="form-group">
+                <h1 class="log-heading">Login</h1>
+                {% csrf_token %}
+                {{ login_form | as_bootstrap }}
+                <button type="submit" class="btn btn-primary">Login</button>
+            </fieldset>
+        </form>
+        <!--/form-->
+    </div>
+    <!--/column-->
+</div>
+<!--/row-->
 {% endblock %}
