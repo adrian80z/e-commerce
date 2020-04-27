@@ -5,5 +5,6 @@ from products.models import Product
 
 
 def search(request):
+    """ Display search results """
     products = Product.objects.filter(name__icontains=request.GET['q'])
     return render(request, "search.html", {"products": products})
