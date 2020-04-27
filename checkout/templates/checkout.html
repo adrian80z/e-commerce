@@ -12,26 +12,46 @@
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 
+{% block page_title %} TopTech | Checkout {% endblock %}
+
+{% block page_heading %}
+<h1 class=" heading text-center cart-bottom">Checkout</h1>
+<hr />
+{% endblock %}
 
 {% block content %}
-<div class="row row-flex">
+<div class="row">
     {% for item in cart_items %}
-    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-        <div class="panel-body">
-            <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
-
-            <div class="caption">
-                <p>{{ item.product.name }}</p>
-                <p>{{ item.quantity }} x {{ item.product.price }}</p>
-            </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 text-md-right">
+        <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image}}')"></div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 text-md-right">
+        <div class="align">
+            <p class="product-description">{{ item.product.name }}</p>
         </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 align text-md-right">
+        <span class="product-space">
+            <b>{{ item.quantity }} x &euro; {{ item.product.price }}</b></span>
     </div>
     {% endfor %}
 </div>
-<div class="row">
-    <p>Total</p>
-    <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
+<hr />
+<div class="row summary">
+    <div class="col-sm-12 text-md-right text-sm-right">
+        <p>Total</p>
+        <p>&euro; {{ total }}</p>
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
 
 <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
     <legend>Payment Details</legend>
