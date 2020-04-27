@@ -1,3 +1,4 @@
+// obtain values from payment form and submit to stripe
 $(function () {
     $("#payment-form").submit(function () {
         var form = this;
