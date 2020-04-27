@@ -7,13 +7,14 @@
 <h1 class=" heading text-center cart-bottom">Review your shopping cart</h1>
 <hr />
 {% endblock %}
+
 {% block content %}
 <div class="row">
     {% if product_count == 0  %}
     <div class="col-sm-12 text-center">
         <i class="fas fa-shopping-cart empty-cart"></i>
     </div>
-    <div class="col-sm-12 text-center m-3">
+    <div class="col-sm-12 text-center no-results">
         <p>Your cart is currently empty</p>
     </div>
     <div class="col-sm-6 offset-sm-3 text-center">
