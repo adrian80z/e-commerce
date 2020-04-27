@@ -2,6 +2,7 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 
+{% block page_title %} TopTech | Home {% endblock %}
 
 {% block jumbotron %}
 <!-- Jumbotron Section -->
@@ -12,8 +13,9 @@
     </div>
 </section>
 {% endblock %}
+
 {% block page_heading %}
-<h1 class="heading">Keep in touch with the latest tech</h1>
+<h1 class="heading home-title">Keep in touch with the latest tech</h1>
 {% endblock %}
 
 {% block content %}
@@ -27,11 +29,13 @@
                     <p class="product-name">{{ product.name }}</p>
                     <span class="product-price"><i class="fas fa-euro-sign"></i> {{ product.price }}</span>
                 </div>
+                <!--/card-body-->
             </div>
+            <!--/card text-center-->
         </a>
     </div>
-    {% empty %}
-    <div class="no-results">Oops, we didn't find any results. Please try another phrase...</div>
+    <!--/column-->
     {% endfor %}
 </div>
+<!--/row-->
 {% endblock %}

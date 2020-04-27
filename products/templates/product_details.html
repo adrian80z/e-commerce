@@ -2,6 +2,7 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 
+{% block page_title %} TopTech | Product info {% endblock %}
 
 {% block page_heading %}
 <h1 class="heading details-heading">{{ product.name }}</h1>
@@ -10,8 +11,9 @@
 {% block content %}
 <div class="row">
     <div class="col-sm-12 col-lg-5 col-md-5">
-        <img class="card-img-top" src="/media/{{ product.image }}" alt=" {{ product.name}} image" />
+        <img class="card-img-top size" src="/media/{{ product.image }}" alt=" {{ product.name}} image" />
     </div>
+    <!--/column-->
     <div class="col-sm-12 col-lg-6 col-md-6 box-margin">
         <h3>Product Features</h3>
         <hr />
@@ -36,15 +38,21 @@
                                 cart</button>
                         </span>
                     </div>
+                    <!--/input-group-->
                 </form>
+                <!--/form-->
             </div>
+            <!--/column-->
         </div>
+        <!--/row-->
     </div>
+    <!--/column-->
 </div>
+<!--/row-->
 <div class="row info">
     <div class="col-sm-12">
         <h3>Product information</h3>
-        <hr />
+        <hr class="product-line" />
         <p><strong>{{ product.description_heading_one }}</strong></p>
         <p class="smaller-font">{{ product.description_one }}</p>
         <p><strong>{{ product.description_heading_two }}</strong></p>
@@ -52,5 +60,7 @@
         <p><strong>{{ product.description_heading_three }}</strong></p>
         <p class="smaller-font">{{ product.description_three }}</p>
     </div>
+    <!--/column-->
 </div>
+<!--/row info-->
 {% endblock %}
