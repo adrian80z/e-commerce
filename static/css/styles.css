@@ -3,11 +3,12 @@ body {
   padding-top: 50px;
   color: #595c59;
   height: 100%;
+  user-select: none;
 }
 
-/* .main {
-  min-height: calc(100vh - 154px);
-} */
+.main {
+  min-height: calc(100vh - 234px);
+}
 
 h1 {
   font-size: 1.75rem;
@@ -33,6 +34,28 @@ footer {
   color: rgba(255, 255, 255, 0.5);
   margin-top: 5rem;
   width: 100%;
+}
+
+/* login/registration form */
+.login {
+  padding: 1rem 2rem;
+  margin-top: 10vh;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+}
+
+.log-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.help-block {
+  font-size: 0.8rem;
+  color: lightslategrayda;
+}
+
+.login-ref {
+  font-size: 0.8rem;
 }
 
 /* homepage */
@@ -67,7 +90,7 @@ footer {
 }
 
 .card {
-  padding: 0.5rem;
+  padding: 1.5rem;
   border: 1px solid transparent;
 }
 
@@ -81,9 +104,6 @@ footer {
 
 .product-name {
   color: #595c59;
-}
-
-.product-name {
   min-height: 100px;
 }
 
@@ -94,6 +114,10 @@ footer {
   border-top: 1px solid lightgray;
   padding: 0.5rem 0 0 0;
   display: block;
+}
+
+.home-title {
+  margin-bottom: 1.5rem;
 }
 
 /* Product details page */
@@ -121,6 +145,10 @@ footer {
   margin-top: 2.5rem;
 }
 
+.product-line {
+  margin-bottom: 2rem;
+}
+
 .mr {
   margin: auto auto;
 }
@@ -136,8 +164,13 @@ footer {
 }
 
 .empty-cart {
-  padding-top: 5rem;
+  padding-top: 4rem;
   font-size: 6rem;
+}
+
+.no-results {
+  font-size: 1.2rem;
+  margin-top: 2.5rem;
 }
 
 .btn-danger {
@@ -163,6 +196,14 @@ footer {
 
 .product-description {
   font-size: 0.9rem;
+}
+
+/* search page */
+
+.search-results {
+  background-image: url("../images/nothing.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* .icon-bar {
@@ -197,4 +238,23 @@ caption p {
   display: flex;
   flex-wrap: wrap;
   margin-top: 40px;
+}
+
+#backTop {
+  width: 45px;
+  line-height: 45px;
+  overflow: hidden;
+  z-index: 999;
+  display: none;
+  cursor: pointer;
+  transform: rotate(270deg);
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+  background-color: #ddd;
+  color: #555;
+  text-align: center;
+  font-size: 35px;
+  transition: 0.2s linear all;
+  box-shadow: 0px 0px 5px 1px grey;
 }
