@@ -2,6 +2,7 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 
+{% block page_title %} TopTech | Cart {% endblock %}
 
 {% block page_heading %}
 <h1 class=" heading text-center cart-bottom">Review your shopping cart</h1>
@@ -36,24 +37,28 @@
         <form class="form-inline align justify-content-center" method="post" action="{% url 'update_cart' item.id %}">
             {% csrf_token %}
             <div class="input-group-addon">Qty&nbsp;</div>
-            <input name="quantity" type="number" min="0" max="999" value="{{item.quantity }}" class="form-control">
+            <input name="quantity" type="number" min="0" max="999" value="{{item.quantity }}"
+                class="form-control input-width">
             <button type="submit" class="btn btn-success"><i class="fas fa-sync-alt"></i></button>
         </form>
     </div>
     <div class="col-sm-12 col-md-6 col-lg-3 align">
-        {{ item.quantity }} x &euro; {{ item.product.price }} <a href="{% url 'remove_product' item.id %}"
-            class="btn btn-danger" role="button"><i class="fas fa-trash"></i></a>
+        <span class="product-space">
+            {{ item.quantity }} x &euro; {{ item.product.price }} <a href="{% url 'remove_product' item.id %}"
+                class="btn btn-danger" role="button"><i class="fas fa-trash"></i></a></span>
     </div>
+
     {% endfor %}
+
 </div>
 <hr />
-<div class="row">
+<div class="row summary">
     <div class="col-sm-12 text-md-right text-sm-right">
         <p>Total</p>
         <p>&euro; {{ total }}</p>
     </div>
 </div>
-<div class="row">
+<div class="row cart-nav-bottom">
     <div class="col-sm-12">
         <a href="{% url 'index' %}" class="btn btn-success" role="button"><i class="fas fa-arrow-circle-left"></i>
             Shopping</a>
