@@ -12,7 +12,7 @@ $(function () {
         Stripe.createToken(card, function (status, response) {
             if (status === 200) {
                 $("#credit-card-errors").hide();
-                $("#stripe_id").val(response.id);
+                $("#id_stripe_id").val(response.id);
 
                 // Prevent the credit card details from being submitted
                 // to our server
