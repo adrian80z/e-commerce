@@ -4,6 +4,7 @@ body {
   color: #595c59;
   height: 100%;
   user-select: none;
+  font-family: "Lato", sans-serif;
 }
 
 .main {
@@ -36,6 +37,11 @@ footer {
   width: 100%;
 }
 
+.mobile {
+  display: inline-block !important;
+  width: 75%;
+}
+
 /* login/registration form */
 .login {
   padding: 1rem 2rem;
@@ -60,13 +66,18 @@ footer {
 
 /* homepage */
 .jumbotron-home {
-  background: url(../images/asus.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
+    url(../images/apple.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: top;
   background-repeat: no-repeat;
   position: relative;
   height: 50vh;
+}
+
+#search-button {
+  vertical-align: baseline;
 }
 
 .container-fluid {
@@ -104,7 +115,6 @@ footer {
 
 .product-name {
   color: #595c59;
-  min-height: 100px;
 }
 
 .product-price {
@@ -211,9 +221,16 @@ footer {
   margin-top: 3rem;
 }
 
+.trash-space {
+  display: inline-block;
+  width: 34%;
+}
+
 .summary {
   font-size: 1.2rem;
   font-weight: bold;
+  float: right;
+  text-align: right;
 }
 
 /* search page */
@@ -229,9 +246,7 @@ footer {
 } */
 
 .badge {
-  padding-left: 9px;
-  padding-right: 9px;
-  border-radius: 50%;
+  padding: 0.25em 0.5em;
 }
 
 .label-warning[href],
@@ -248,14 +263,20 @@ footer {
   margin: auto auto;
 }
 
-caption p {
-  word-wrap: break-word;
+legend {
+  margin: 2rem 1rem;
 }
 
-.row.row-flex {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 40px;
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clearfix {
+  clear: both;
 }
 
 #backTop {
