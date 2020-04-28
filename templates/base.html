@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!--cdn fontawesome stylesheet-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!--cdn google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <!--link to static folder with custom stylesheet-->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css" />
     <!--cdn bootstrap and jQuery js-->
@@ -38,7 +40,7 @@
                     </li>
                 </ul>
                 <!--/ul-->
-                <form class="form-inline justify-content-center d-none d-sm-block" action="{% url 'search' %}"
+                <form class="form-inline justify-content-center d-none d-md-none d-lg-block" action="{% url 'search' %}"
                     method="get">
                     <input type="text" name="q" class="form-control" placeholder="Enter keyword...">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -67,9 +69,10 @@
                     </li>
                 </ul>
                 <!--/ul-->
-                <form action="{% url 'search' %}" method="get" class="d-block d-sm-none form-inline">
-                    <input type="text" name="q" class="form-control">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <form action="{% url 'search' %}" method="get" class="d-block d-md-block d-lg-none form-inline">
+                    <input type="text" name="q" class="form-control mobile" placeholder="Enter keyword...">
+                    <button class=" btn btn-outline-success my-2 my-sm-2" id="search-button"
+                        type="submit">Search</button>
                 </form>
                 <!--/form-->
             </div>
@@ -102,13 +105,16 @@
     </section>
     <!--/container main-->
     <footer>
-        <div class="row">
-            <div class="col-sm-12">
-                <p>&copy; 2020 TopTech</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ">
+                    <p>&copy; 2020 TopTech</p>
+                </div>
+                <!--/column-->
             </div>
-            <!--/column-->
+            <!--/row-->
         </div>
-        <!--/row-->
+        <!--/container-->
     </footer>
     <!--/footer-->
     <!--back to top arrow-->
