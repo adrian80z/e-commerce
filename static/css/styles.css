@@ -8,7 +8,7 @@ body {
 }
 
 .main {
-  min-height: calc(100vh - 234px);
+  min-height: calc(100vh - 218px);
 }
 
 h1 {
@@ -35,6 +35,11 @@ footer {
   color: rgba(255, 255, 255, 0.5);
   margin-top: 5rem;
   width: 100%;
+}
+
+footer p {
+  margin: 0;
+  text-align: center;
 }
 
 .mobile {
@@ -184,7 +189,7 @@ footer {
 }
 
 .btn-danger {
-  margin-left: 1.3rem;
+  margin-left: -2rem;
 }
 
 .btn-success {
@@ -218,12 +223,19 @@ footer {
 }
 
 .cart-nav-bottom {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .trash-space {
   display: inline-block;
   width: 34%;
+}
+
+.price-space {
+  width: 50%;
+  float: left;
+  text-align: right;
+  padding-top: 9px;
 }
 
 .summary {
@@ -264,7 +276,7 @@ footer {
 }
 
 legend {
-  margin: 2rem 1rem;
+  padding: 2rem 0 2rem 1rem;
 }
 
 .left {
