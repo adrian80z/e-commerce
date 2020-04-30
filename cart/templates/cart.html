@@ -42,7 +42,7 @@
         <form class="form-inline align justify-content-center" method="post" action="{% url 'update_cart' item.id %}">
             {% csrf_token %}
             <div class="input-group-addon">Qty&nbsp;</div>
-            <input name="quantity" type="number" min="0" max="999" value="{{item.quantity }}"
+            <input name="quantity" type="number" min="0" max="999" required value="{{item.quantity }}"
                 class="form-control input-width">
             <button type="submit" class="btn btn-success"><i class="fas fa-sync-alt"></i></button>
         </form>
