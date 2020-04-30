@@ -212,7 +212,8 @@ The project was deployed using Heroku as a hosting platform. Static files and me
 1. Create a virtual environment for your Python project.
 2. Create a env.py file in the root project folder.
 3. Add the following variables to the env.py file:
-   \_os.environ.setdefault['SECRET_KEY']
+
+   os.environ.setdefault['SECRET_KEY']
 
    os.environ.setdefault['STRIPE_PUBLISHABLE']
 
@@ -222,7 +223,7 @@ The project was deployed using Heroku as a hosting platform. Static files and me
 
    os.environ.setdefault['AWS_SECRET_ACCESS_KEY']
 
-   os.environ.setdefault['DATABASE_URL']\_
+   os.environ.setdefault['DATABASE_URL']
 
 4. Use _pip install -r requirements.txt_ to install Python required modules.
 
@@ -252,6 +253,7 @@ For security reason the environment variables were set in a separate file env.py
 18. Use the Django admin interface to add data to your app.
 
 A live website can be found on Heroku (https://e-toptech.herokuapp.com/)
+
 The repository can be found on Github (https://github.com/adrian80z/e-commerce)
 
 ## Credits
