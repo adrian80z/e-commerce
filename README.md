@@ -161,7 +161,7 @@ Manual testing was performed by clicking every element on page which can be clic
    - Try to submit the form with valid input and verify that a success message appears (user is redirected to homepage and message appears)
    - Try to submit the form with invalid input and verify that a error message appears (use different card number cause error message appears)
 
-   All fields in that form have required attribute.
+   All fields in user details form have required attribute. Credit card forms has required attr set to false as there is some issue and payment cannot be successfully proceed.
 
    For Stripe payment test following details need to be used:
 
