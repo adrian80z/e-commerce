@@ -189,7 +189,7 @@ footer p {
 }
 
 .btn-danger {
-  margin-left: -2rem;
+  margin-left: -2.6rem;
 }
 
 .btn-success {
@@ -253,17 +253,8 @@ footer p {
   background-repeat: no-repeat;
 }
 
-/* .icon-bar {
-  background-color: #fff;
-} */
-
 .badge {
   padding: 0.25em 0.5em;
-}
-
-.label-warning[href],
-.badge-warning[href] {
-  background-color: #c67605;
 }
 
 .product {
@@ -289,6 +280,11 @@ legend {
 
 .clearfix {
   clear: both;
+}
+
+.selected-items {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 #backTop {
