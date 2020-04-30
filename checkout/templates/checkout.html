@@ -16,6 +16,10 @@
 
 {% block page_heading %}
 <h1 class=" heading text-center cart-bottom">Order Summary</h1>
+{% if product_count > 0 %}
+<p class="selected-items">You have selected {{ product_count }} {% if product_count > 1 %} items {% else %}
+    item {% endif %}</p>
+{% endif %}
 <hr />
 {% endblock %}
 
