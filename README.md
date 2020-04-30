@@ -107,7 +107,7 @@ For the testing following tools and services was used:
 
 All validation tests passed: no errors in the DevTools console. CSS and JavaScript have correct syntax as well. The HTML validator did not recognise the Django template tags which resulted in showing errors.
 
-The website was constantly tested by Travis CI each time it was pushed to git. All test are passed as is idicated on the top of this README.MD file page by green Travis CI icon.
+The website was constantly tested by Travis CI each time it was pushed to git. All test are passed as is indicated on the top of this README.MD file page by green Travis CI icon.
 
 ### Manual testing
 
@@ -166,7 +166,9 @@ Manual testing was performed by clicking every element on page which can be clic
    For Stripe payment test following details need to be used:
 
    Card number - 4242424242424242
+
    CVC - any 3 digit number
+
    Expiry date - any date in the future
 
 7) Scrolling up and down all the pages
@@ -210,12 +212,18 @@ The project was deployed using Heroku as a hosting platform. Static files and me
 1. Create a virtual environment for your Python project.
 2. Create a env.py file in the root project folder.
 3. Add the following variables to the env.py file:
-   _os.environ.setdefault['SECRET_KEY']
+   \_os.environ.setdefault['SECRET_KEY']
+
    os.environ.setdefault['STRIPE_PUBLISHABLE']
+
    os.environ.setdefault['STRIPE_SECRET']
+
    os.environ.setdefault['AWS_ACCESS_KEY_ID']
+
    os.environ.setdefault['AWS_SECRET_ACCESS_KEY']
-   os.environ.setdefault['DATABASE_URL']_
+
+   os.environ.setdefault['DATABASE_URL']\_
+
 4. Use _pip install -r requirements.txt_ to install Python required modules.
 
 For security reason the environment variables were set in a separate file env.py and are referenced by os.environ.get("KEY", "name"). Stripe account need to be set up to obtain testing keys. AWS S3 account is used for hosting media and static files.
